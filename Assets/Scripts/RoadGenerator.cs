@@ -10,6 +10,7 @@ public class RoadGenerator : MonoBehaviour
     public float maxSpeed = 10;
     float speed = 0;
     public int maxRoadCount = 5;
+    bool isStoped;
     void Start()
     {
         ResetLevel();
@@ -24,17 +25,32 @@ public class RoadGenerator : MonoBehaviour
         {
             road.transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
         }
-        if(roads[0].transform.position.z < -15)
+        if (roads[0].transform.position.z < -15)
         {
             Destroy(roads[0]);
             roads.RemoveAt(0);
 
             CreateNextRoad();
         }
+        if (Input.GetKeyDown(KeyCode.Space)&& !isStoped)
+        {
+            StartCoroutine(ResetLevelDeley());
+        }
+    }
+    IEnumerator ResetLevelDeley()
+    {
+        yield return new WaitForSeconds(1f);
+        ResetLevel();
+        isStoped = true;
     }
 
-    public void StartLevel()
+    public void StartLevelWithDeley()
     {
+        StartCoroutine(DeleyStart());
+    }
+    IEnumerator DeleyStart()
+    {
+        yield return new WaitForSeconds(2.4f);
         speed = maxSpeed;
         SwipeManager.instance.enabled = true;
     }

@@ -1002,6 +1002,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.369266, y: 0.2875359, z: 0.25733593}
   m_Center: {x: 0.000000014901161, y: 0.111034974, z: -0.027337566}
+--- !u!114 &869209371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869209367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43d8fa4527488c4ebe72658ae0b3297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1208,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoadPrefab: {fileID: 8335616040071872018, guid: 0bc4b7da75c60a64f8254bf5efaed1c5, type: 3}
+  RoadEnemyPrefab: {fileID: 8335616040071872018, guid: d37e28e700c8a3342961a6c802f081f8, type: 3}
+  RoadEnemyLeftPrefab: {fileID: 8335616040071872018, guid: 8ec11238d0124fa40981b8ffd74af7ef, type: 3}
+  RoadEnemyRightPrefab: {fileID: 8335616040071872018, guid: fc2f8e2ccb360184c9616e42c85312d2, type: 3}
   maxSpeed: 10
   maxRoadCount: 7
 --- !u!4 &1196306139
@@ -1589,9 +1604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d5b665d86b23b47af5d87a00a55258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1742513265}
+  animator: {fileID: 0}
   AllRigidbodies:
-  - {fileID: 869209368}
   - {fileID: 1092632684}
   - {fileID: 1845779627}
   - {fileID: 105990126}

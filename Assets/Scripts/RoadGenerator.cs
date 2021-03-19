@@ -16,6 +16,7 @@ public class RoadGenerator : MonoBehaviour
     bool isStoped;
     int cycleEnemySpawn = 0;
     System.Random rnd = new System.Random();
+    int rand = 0;
     void Start()
     {
         ResetLevel();
@@ -89,15 +90,17 @@ public class RoadGenerator : MonoBehaviour
             //newRoadEn = Instantiate(RoadEnemyPrefab,
             //                        posDiff + new Vector3(rnd.Next(0, 3), 0, 0),
             //                        Quaternion.identity);
-            if (rnd.Next(-1, 1) == 0)
+            rand = rnd.Next(-1, 1);
+            print("rnd.Next(-1, 1) ="+ rand);
+            if (rand == 0)
             {
                 newRoadEn = Instantiate(RoadEnemyPrefab, position, Quaternion.identity);
             }
-            else if(rnd.Next(-1, 1) > 0)
+            else if(rand > 0)
             {
                 newRoadEn = Instantiate(RoadEnemyRightPrefab, position, Quaternion.identity);
             }
-            else if(rnd.Next(-1, 1) < 0)
+            else if(rand < 0)
             {
                 newRoadEn = Instantiate(RoadEnemyLeftPrefab, position, Quaternion.identity);
             }
@@ -105,6 +108,7 @@ public class RoadGenerator : MonoBehaviour
             newRoadEn.transform.SetParent(transform);
             roads.Add(newRoadEn);
             cycleEnemySpawn = 0;
+            print("cycleEnemySpawn " + cycleEnemySpawn);
         }
         else
         {

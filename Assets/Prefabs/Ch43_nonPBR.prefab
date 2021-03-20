@@ -1427,6 +1427,7 @@ GameObject:
   - component: {fileID: 6291173746983895531}
   - component: {fileID: 8802681126087969885}
   - component: {fileID: -7967292808988950332}
+  - component: {fileID: 353372781216529835}
   m_Layer: 0
   m_Name: Ch43_nonPBR
   m_TagString: Untagged
@@ -1495,6 +1496,20 @@ CapsuleCollider:
   m_Height: 1.8665413
   m_Direction: 1
   m_Center: {x: 0.0032417774, y: 0.9449685, z: 0}
+--- !u!114 &353372781216529835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597726042680714907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea06d462c49f604f968bf85ca1eb7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6291173746983895531}
+  gameManager: {fileID: 5270606772427757639, guid: c8748bb473788824886470089612a4b6, type: 3}
 --- !u!1 &6946861978437820630
 GameObject:
   m_ObjectHideFlags: 0

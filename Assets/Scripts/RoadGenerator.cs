@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
 {
+    public GameObject gameManager;
+    GameState gameState;
     public GameObject RoadPrefab;
     public GameObject RoadEnemyPrefab;
     public GameObject RoadEnemyLeftPrefab;
@@ -19,7 +21,9 @@ public class RoadGenerator : MonoBehaviour
     int rand = 0;
     void Start()
     {
+        gameState = gameManager.GetComponent<GameState>();
         ResetLevel();
+
         //StartLevel();
     }
 
@@ -32,13 +36,16 @@ public class RoadGenerator : MonoBehaviour
             road.transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
         }
         
-        if (roads[0].transform.position.z < -15)
+        if (roads[0].transform.position.z < -15 && !gameState.gameover)
         {
             CreateNextRoad();
 
             Destroy(roads[0]);
-            roads.RemoveAt(0);
-            
+            roads.RemoveAt(0);   
+        }
+        else if (gameState.gameover)
+        {
+            speed = 0;
         }
         //if (Input.GetKeyDown(KeyCode.Space)&& !isStoped)
         //{

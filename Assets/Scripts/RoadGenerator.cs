@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class RoadGenerator : MonoBehaviour
 {
     public GameObject gameManager;
@@ -23,10 +22,8 @@ public class RoadGenerator : MonoBehaviour
     {
         gameState = gameManager.GetComponent<GameState>();
         ResetLevel();
-
         //StartLevel();
     }
-
     void Update()
     {
         if (speed == 0) return;
@@ -72,7 +69,10 @@ public class RoadGenerator : MonoBehaviour
 
     public void ResetLevel()
     {
-        SwipeManager.instance.enabled = false;
+        //print("ResetLevel "+ gameState.gameover);
+        gameState.gameover = false;
+        //print("ResetLevel " + gameState.gameover);
+        //SwipeManager.instance.enabled = false;
         speed = 0;
         while (roads.Count > 0)
         {
@@ -98,7 +98,7 @@ public class RoadGenerator : MonoBehaviour
             //                        posDiff + new Vector3(rnd.Next(0, 3), 0, 0),
             //                        Quaternion.identity);
             rand = rnd.Next(-1, 1);
-            print("rnd.Next(-1, 1) ="+ rand);
+            //print("rnd.Next(-1, 1) ="+ rand);
             if (rand == 0)
             {
                 newRoadEn = Instantiate(RoadEnemyPrefab, position, Quaternion.identity);
@@ -111,11 +111,10 @@ public class RoadGenerator : MonoBehaviour
             {
                 newRoadEn = Instantiate(RoadEnemyLeftPrefab, position, Quaternion.identity);
             }
-            
             newRoadEn.transform.SetParent(transform);
             roads.Add(newRoadEn);
             cycleEnemySpawn = 0;
-            print("cycleEnemySpawn " + cycleEnemySpawn);
+            //print("cycleEnemySpawn " + cycleEnemySpawn);
         }
         else
         {

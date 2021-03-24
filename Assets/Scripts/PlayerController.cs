@@ -52,21 +52,30 @@ public class PlayerController : MonoBehaviour
     }
     public void StartGame()
     {
+        gameState.gameover = false;
         animator.SetTrigger("Ready");
+        animator.SetTrigger("Run");
         //RoadGenerator.instance.StartLevel();
     }
     public void ResetGame()
     {
-        animator.SetTrigger("Idle");
+        gameState.gameover = false;
+        animator.SetTrigger("Stop");
         transform.position=startGamePosition;
         transform.rotation=startGameRotation;
+        //gameState.gameover = false;
     }
     IEnumerator EndGame()
     {
         print("GameOver");
-        animator.SetTrigger("SweepFallOn");
+        if (gameState.gameover)
+        {
+            animator.SetTrigger("SweepFallOn");
+        }
         yield return new WaitForSeconds(1f);
         animator.SetTrigger("Laying");
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("Idle");
     }
     //IEnumerator LeftOffset()
     //{

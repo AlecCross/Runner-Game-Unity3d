@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +18,7 @@ public class GamePause : MonoBehaviour
     void Start()
     {
         pauseMenu.SetActive(false);
-        
+        isPaused = false;
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class GamePause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            print("Нажат Esc ");
             if (isPaused) Resume();
             else          PauseTime();
         }

@@ -37,22 +37,23 @@ public class CollisionWithEnemy : MonoBehaviour
         }
         else if (health <= 0 && !gameState.gameover)
         {
-            print("Потрачено!");
+            //print("Потрачено!");
             healthBar.text = "GameOver";
             gameState.gameover = true;
             health = maxHealth;
         }
-        if (scoreCount == 50)
-        {
-            if(HiScore.hiScore < scoreCount)
-            {
-                HiScore.hiScore = scoreCount;
-            }
+        if (scoreCount == 200)
+        { 
             SceneManager.LoadScene("VictoryScene");
+        }
+        if (HiScore.hiScore < scoreCount)
+        {
+            HiScore.hiScore = scoreCount;
         }
         //print("gameState.gameover " + gameState.gameover.ToString());
 
         scoreDisplay.text = "Score:" + scoreCount;
+        HiScore.currentScore = scoreCount;
         //print("Score: " + scoreCount);
     }
     void OnCollisionEnter(Collision collision)
@@ -61,7 +62,7 @@ public class CollisionWithEnemy : MonoBehaviour
         {
             health--;
             playerAnimator.SetTrigger("HitOnLeftOfHead");
-            print("Столкновение " + gameObject.name + "теряет жизни " + health);
+            //print("Столкновение " + gameObject.name + "теряет жизни " + health);
         }
         //else if (collision.gameObject.name == "Ch43_nonPBR" && health > 0)
         //{
@@ -76,7 +77,7 @@ public class CollisionWithEnemy : MonoBehaviour
         {
             //playerAnimator.SetTrigger("HitOnLeftOfHead");
             scoreCount += 10;
-            print("Столкновение " + gameObject.name + "начислены очки " + scoreCount);
+            //print("Столкновение " + gameObject.name + "начислены очки " + scoreCount);
         }
 
     }

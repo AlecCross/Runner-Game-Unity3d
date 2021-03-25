@@ -82,12 +82,12 @@ public class SwipeManager : MonoBehaviour
     {
         if (swipe[0] || swipe[1] || swipe[2] || swipe[3])
         {
-            print("L "+swipeDelta[0] +"|R "+ swipeDelta[1] +"|U "+ swipeDelta[2] +"|D "+ swipeDelta[3]);
+            //print("L "+swipeDelta[0] +"|R "+ swipeDelta[1] +"|U "+ swipeDelta[2] +"|D "+ swipeDelta[3]);
             MoveEvent?.Invoke(swipe); //if (MoveEvent != null) MoveEvent(swipe);
         }
         else
         {
-            print("Click");
+            //print("Click");
             ClickEvent?.Invoke(TouchPosition());
         }
         Reset();

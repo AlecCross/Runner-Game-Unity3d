@@ -5,4 +5,5 @@ using UnityEngine;
 public class HiScore : MonoBehaviour
 {
     public static int hiScore;
+    public static int currentScore;
 }

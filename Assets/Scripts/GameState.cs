@@ -31,19 +31,19 @@ public class GameState : MonoBehaviour
     }
     IEnumerator StartCor()
     {
-        print("Start-SetTrigger(CurtainUp)");
+        //print("Start-SetTrigger(CurtainUp)");
         curtainAnimator.SetTrigger("CurtainUp");
         yield return new WaitForSeconds(1f);
-        print("Start-SetTrigger(CurtainHide)");
+        //print("Start-SetTrigger(CurtainHide)");
         curtainAnimator.SetTrigger("CurtainHide");
         //curtainAnimator.SetTrigger("CurtainIdle");
     }
     IEnumerator RestartCor()
     {
-        print("Restart-SetTrigger(CurtainDown)");
+        //print("Restart-SetTrigger(CurtainDown)");
         curtainAnimator.SetTrigger("CurtainDown");
         yield return new WaitForSeconds(1f);
-        print("Restart-SetTrigger(CurtainHandling)");
+        //print("Restart-SetTrigger(CurtainHandling)");
         curtainAnimator.SetTrigger("CurtainHandling");
         SceneManager.LoadSceneAsync("MainScene");
     }

@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator EndGame()
     {
-        print("GameOver");
+        //print("GameOver");
         if (gameState.gameover)
         {
             animator.SetTrigger("SweepFallOn");

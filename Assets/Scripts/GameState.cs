@@ -13,6 +13,7 @@ public class GameState : MonoBehaviour
     {
         //curtainAnimator.SetTrigger("CurtainHandling");
         //curtainAnimator.StopPlayback();
+        curtainAnimator.SetTrigger("CurtainUp");
     }
     private void FixedUpdate()
     {

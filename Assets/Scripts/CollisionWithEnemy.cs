@@ -41,10 +41,12 @@ public class CollisionWithEnemy : MonoBehaviour
             healthBar.text = "GameOver";
             gameState.gameover = true;
             health = maxHealth;
+            FindObjectOfType<AudioManger>().StopAllAudio();
             FindObjectOfType<AudioManger>().Play("PlayerDeath");
         }
         if (scoreCount == 100 && !gameState.gameover)
         {
+            FindObjectOfType<AudioManger>().StopAllAudio();
             FindObjectOfType<AudioManger>().Play("Victory");
             SceneManager.LoadScene("VictoryScene");
         }

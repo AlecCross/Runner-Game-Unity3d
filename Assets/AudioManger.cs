@@ -12,9 +12,18 @@ public class AudioManger : MonoBehaviour
     public Sound[] sounds;
     public static AudioManger instance;
     // Start is called before the first frame update
+    //public AudioSource[] allAudioSources;
+
+    public void StopAllAudio()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.Stop();
+        }
+    }
     void Awake()
     {
-        if(instance == null){
+        if (instance == null){
             instance = this;
         }
         else{

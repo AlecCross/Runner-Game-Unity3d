@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public GameObject gameManager;
     GameState gameState;
     float laneOffset = 1f;
-    float laneChangeSpeed = 15;
+    float laneChangeSpeed = 15; 
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -55,10 +56,13 @@ public class PlayerController : MonoBehaviour
         gameState.gameover = false;
         animator.SetTrigger("Ready");
         animator.SetTrigger("Run");
+        FindObjectOfType<AudioManger>().StopAllAudio();
+        FindObjectOfType<AudioManger>().Play("RunningMusic");
         //RoadGenerator.instance.StartLevel();
     }
     public void ResetGame()
     {
+        FindObjectOfType<AudioManger>().StopAllAudio();
         gameState.gameover = false;
         animator.SetTrigger("Stop");
         transform.position=startGamePosition;

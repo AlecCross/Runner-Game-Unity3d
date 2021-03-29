@@ -4120,7 +4120,7 @@ MonoBehaviour:
     loop: 0
     mute: 0
   - clip: {fileID: 8300000, guid: 74748554d05096c4ea499379d0644244, type: 3}
-    name: Running
+    name: RunningMusic
     volume: 0.7
     pitch: 1
     source: {fileID: 0}
@@ -4128,6 +4128,13 @@ MonoBehaviour:
     mute: 0
   - clip: {fileID: 8300000, guid: 2d260534c79052c45aa4bd4843503ee1, type: 3}
     name: Victory
+    volume: 0.7
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    mute: 0
+  - clip: {fileID: 8300000, guid: 77f6a51f9282fa444a1d256eda71436d, type: 3}
+    name: Run
     volume: 0.7
     pitch: 1
     source: {fileID: 0}

@@ -43,8 +43,9 @@ public class CollisionWithEnemy : MonoBehaviour
             health = maxHealth;
             FindObjectOfType<AudioManger>().Play("PlayerDeath");
         }
-        if (scoreCount == 200)
-        { 
+        if (scoreCount == 100)
+        {
+            FindObjectOfType<AudioManger>().Play("Victory");
             SceneManager.LoadScene("VictoryScene");
         }
         if (HiScore.hiScore < scoreCount)
@@ -62,7 +63,12 @@ public class CollisionWithEnemy : MonoBehaviour
         if (collision.gameObject.name == "Ch43_nonPBR" && health > 0)
         {
             health--;
+            
             playerAnimator.SetTrigger("HitOnLeftOfHead");
+            if (!gameState.gameover)
+            {
+                FindObjectOfType<AudioManger>().Play("Collision");
+            }
             //print("Столкновение " + gameObject.name + "теряет жизни " + health);
         }
         //else if (collision.gameObject.name == "Ch43_nonPBR" && health > 0)

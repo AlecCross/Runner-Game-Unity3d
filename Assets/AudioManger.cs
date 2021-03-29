@@ -6,23 +6,23 @@ using UnityEngine.Audio;
 
 public class AudioManger : MonoBehaviour
 {
+    [SerializeField]
+    GameState gameState;
+
     public Sound[] sounds;
     public static AudioManger instance;
     // Start is called before the first frame update
     void Awake()
     {
-        if(instance == null)
-        {
+        if(instance == null){
             instance = this;
         }
-        else
-        {
+        else{
             Destroy(gameObject);
             return;
         }
         DontDestroyOnLoad(gameObject);
-        foreach (Sound s in sounds)
-        {
+        foreach (Sound s in sounds){
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = s.volume;
@@ -30,11 +30,21 @@ public class AudioManger : MonoBehaviour
             s.source.loop = s.loop;
         }
     }
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.M))
+            Mute();
+    }
 
     // Update is called once per frame
-    public void Play(string name)
-    {
+    public void Play(string name){
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
+    }
+    public void Mute(){
+        foreach (Sound s in sounds){
+            s.mute = !s.mute;
+            s.source.mute = s.mute;
+        }
+        gameState.mute = !gameState.mute;
     }
 }

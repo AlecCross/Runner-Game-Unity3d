@@ -53,5 +53,4 @@ public class GamePause : MonoBehaviour
     {
         Application.Quit();
     }
-
 }

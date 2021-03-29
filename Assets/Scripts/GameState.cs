@@ -7,6 +7,7 @@ public class GameState : MonoBehaviour
 {
     public bool gameover;
     public bool victory;
+    public bool mute;
     public Animator curtainAnimator;
 
     private void Start()

@@ -43,7 +43,7 @@ public class CollisionWithEnemy : MonoBehaviour
             health = maxHealth;
             FindObjectOfType<AudioManger>().Play("PlayerDeath");
         }
-        if (scoreCount == 100)
+        if (scoreCount == 100 && !gameState.gameover)
         {
             FindObjectOfType<AudioManger>().Play("Victory");
             SceneManager.LoadScene("VictoryScene");
@@ -63,9 +63,8 @@ public class CollisionWithEnemy : MonoBehaviour
         if (collision.gameObject.name == "Ch43_nonPBR" && health > 0)
         {
             health--;
-            
             playerAnimator.SetTrigger("HitOnLeftOfHead");
-            if (!gameState.gameover)
+            if (health>0 && !gameState.gameover)
             {
                 FindObjectOfType<AudioManger>().Play("Collision");
             }

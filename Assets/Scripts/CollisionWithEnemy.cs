@@ -45,7 +45,7 @@ public class CollisionWithEnemy : MonoBehaviour
             FindObjectOfType<AudioManger>().Play("PlayerDeath");
             //FindObjectOfType<AudioManger>().Play("GameOver");
         }
-        if (scoreCount >= 100 && !gameState.gameover)
+        if (scoreCount >= 150 && !gameState.gameover)
         {
             FindObjectOfType<AudioManger>().StopAllAudio();
             FindObjectOfType<AudioManger>().Play("Victory");

@@ -45,6 +45,18 @@ public class AudioManger : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+    public void MuteByName(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.mute = true;
+        print("MuteByName "+name + " " + s.source.mute);
+    }
+    public void UnMuteByName(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.mute = false;
+        print("UnMuteByName " + name + " " + s.source.mute);
+    }
     public void Mute(){
         foreach (Sound s in sounds){
             s.mute = !s.mute;

@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && !gameState.gameover)
         {
-            animator.SetTrigger("RunJump");
+            StartCoroutine(JumpSound());
         }
         if (gameState.gameover)
         {
@@ -50,18 +50,37 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position,
                                                     targetPos,
                                                     laneChangeSpeed * Time.deltaTime);
+        
     }
     public void StartGame()
     {
-        gameState.gameover = false;
-        animator.SetTrigger("Ready");
-        animator.SetTrigger("Run");
-        FindObjectOfType<AudioManger>().StopAllAudio();
-        FindObjectOfType<AudioManger>().Play("RunningMusic");
+        if (!gameState.run)
+        {
+            gameState.run = true;
+            StartCoroutine(RunSound());
+            gameState.gameover = false;
+            animator.SetTrigger("Ready");
+            animator.SetTrigger("Run");
+            FindObjectOfType<AudioManger>().StopAllAudio();
+            FindObjectOfType<AudioManger>().Play("RunningMusic");
+        }
         //RoadGenerator.instance.StartLevel();
+    }
+    IEnumerator RunSound()
+    {
+        yield return new WaitForSeconds(1.65f);
+        FindObjectOfType<AudioManger>().Play("Run");
+    }
+    IEnumerator JumpSound()
+    {
+        FindObjectOfType<AudioManger>().MuteByName("Run");
+        animator.SetTrigger("RunJump"); 
+        yield return new WaitForSeconds(0.8f);
+        FindObjectOfType<AudioManger>().UnMuteByName("Run");
     }
     public void ResetGame()
     {
+        gameState.run = false;
         FindObjectOfType<AudioManger>().StopAllAudio();
         gameState.gameover = false;
         animator.SetTrigger("Stop");
@@ -74,6 +93,7 @@ public class PlayerController : MonoBehaviour
         //print("GameOver");
         if (gameState.gameover)
         {
+            gameState.run = false;
             animator.SetTrigger("SweepFallOn");
         }
         yield return new WaitForSeconds(1f);

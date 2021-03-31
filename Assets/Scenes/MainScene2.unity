@@ -4114,14 +4114,14 @@ MonoBehaviour:
     mute: 0
   - clip: {fileID: 8300000, guid: e57e96829b1a9034c8f7babe6a5d1d15, type: 3}
     name: Collision
-    volume: 0.7
+    volume: 0.55
     pitch: 1
     source: {fileID: 0}
     loop: 0
     mute: 0
   - clip: {fileID: 8300000, guid: 74748554d05096c4ea499379d0644244, type: 3}
     name: RunningMusic
-    volume: 0.7
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -4133,7 +4133,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     mute: 0
-  - clip: {fileID: 8300000, guid: 77f6a51f9282fa444a1d256eda71436d, type: 3}
+  - clip: {fileID: 8300000, guid: d289c5f28c37bec488378046336611f4, type: 3}
     name: Run
     volume: 0.718
     pitch: 1

@@ -8,6 +8,7 @@ public class Level2 : MonoBehaviour
 {
     public void ToLevel2()
     {
+        FindObjectOfType<AudioManger>().StopAllAudio();
         SceneManager.LoadScene("MainScene2");
     }
 }

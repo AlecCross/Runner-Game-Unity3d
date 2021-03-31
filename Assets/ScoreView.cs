@@ -11,6 +11,6 @@ public class ScoreView : MonoBehaviour
     {
         currentScore.text = "CtScore " + HiScore.currentScore.ToString();
         hiScore.text = "HiScore " + HiScore.hiScore.ToString();
-        FindObjectOfType<AudioManger>().Play("GameOver");
+        
     }
 }

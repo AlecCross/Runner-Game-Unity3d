@@ -7,6 +7,7 @@ public class PlayMore : MonoBehaviour
 {
     public void LoadMainScene()
     {
+        FindObjectOfType<AudioManger>().StopAllAudio();
         SceneManager.LoadScene("MainScene");
     }
 }

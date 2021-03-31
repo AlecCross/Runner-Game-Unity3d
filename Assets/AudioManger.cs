@@ -6,14 +6,10 @@ using UnityEngine.Audio;
 
 public class AudioManger : MonoBehaviour
 {
+    public static AudioManger instance;
     [SerializeField]
     GameState gameState;
-
     public Sound[] sounds;
-    public static AudioManger instance;
-    // Start is called before the first frame update
-    //public AudioSource[] allAudioSources;
-
     public void StopAllAudio()
     {
         foreach (Sound s in sounds)

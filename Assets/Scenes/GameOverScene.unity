@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 496202137}
   - component: {fileID: 496202136}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,6 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346162316}
   - component: {fileID: 1346162317}
+  - component: {fileID: 1346162318}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
@@ -972,6 +973,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScore: {fileID: 1070402063}
   hiScore: {fileID: 604431801}
+--- !u!114 &1346162318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346162315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2d5f39c9ed770468af5b26a1202b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1710229760
 GameObject:
   m_ObjectHideFlags: 0

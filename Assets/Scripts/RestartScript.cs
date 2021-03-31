@@ -8,6 +8,7 @@ public class RestartScript : MonoBehaviour
     public void Restart()
     {
         //SceneManager.LoadScene("GameOverScene");
+        FindObjectOfType<AudioManger>().StopAllAudio();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

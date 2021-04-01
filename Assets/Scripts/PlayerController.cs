@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator JumpSound()
     {
         FindObjectOfType<AudioManger>().MuteByName("Run");
-        animator.SetTrigger("RunJump"); 
+        animator.SetTrigger("Jump"); 
         yield return new WaitForSeconds(0.8f);
         FindObjectOfType<AudioManger>().UnMuteByName("Run");
     }

@@ -16,8 +16,8 @@ public class RoadGenerator : MonoBehaviour
     public int maxRoadCount = 5;
     bool isStoped;
     int cycleEnemySpawn = 0;
-    System.Random rnd = new System.Random();
-    int rand = 0;
+    //System.Random rnd = new System.Random();
+    //float rand;
     void Start()
     {
         gameState = gameManager.GetComponent<GameState>();
@@ -97,11 +97,12 @@ public class RoadGenerator : MonoBehaviour
             //newRoadEn = Instantiate(RoadEnemyPrefab,
             //                        posDiff + new Vector3(rnd.Next(0, 3), 0, 0),
             //                        Quaternion.identity);
-            rand = rnd.Next(-1, 1);
+            float rand = UnityEngine.Random.Range(-1f, 1f);
             //print("rnd.Next(-1, 1) ="+ rand);
             if (rand == 0)
             {
                 newRoadEn = Instantiate(RoadEnemyPrefab, position, Quaternion.identity);
+                //print("");
             }
             else if(rand > 0)
             {

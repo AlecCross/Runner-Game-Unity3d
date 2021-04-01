@@ -8,25 +8,24 @@ public class AudioManger : MonoBehaviour
 {
     public static AudioManger instance;
     [SerializeField]
-    GameState gameState;
+    //GameState gameState;
     public Sound[] sounds;
     public void StopAllAudio()
     {
         foreach (Sound s in sounds)
         {
-            s.source.Stop();
+            s.source.Pause();
         }
     }
     void Awake()
     {
-        if (instance == null){
-            instance = this;
-        }
-        else{
-            Destroy(gameObject);
-            return;
+        if (instance == null) { instance = this; }
+        else
+        {
+            Destroy(gameObject); return;
         }
         DontDestroyOnLoad(gameObject);
+
         foreach (Sound s in sounds){
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;

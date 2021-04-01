@@ -17,10 +17,12 @@ public class ChangeImage : MonoBehaviour
      //bool pdgds = on.defaultMaterial;
         if (AudioListener.pause)
         {
+            FindObjectOfType<AudioManger>().Mute();
             muteText.text = "Un mute";
         }
         else
         {
+            FindObjectOfType<AudioManger>().Mute();
             muteText.text = "Mute";
         }
     }

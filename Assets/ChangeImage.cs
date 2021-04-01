@@ -11,26 +11,11 @@ public class ChangeImage : MonoBehaviour
     Image oof;
     [SerializeField]
     Text muteText;
-    [SerializeField]
-    GameState gameState;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        print(muteText);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
 
     public void OffOn()
     {//button.GetComponent<Image>().mainTexture = /* Texture goes here */;
      //bool pdgds = on.defaultMaterial;
-        if (gameState.mute)
+        if (AudioListener.pause)
         {
             muteText.text = "Un mute";
         }

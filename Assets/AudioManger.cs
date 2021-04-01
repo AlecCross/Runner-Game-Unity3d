@@ -58,10 +58,11 @@ public class AudioManger : MonoBehaviour
         print("UnMuteByName " + name + " " + s.source.mute);
     }
     public void Mute(){
-        foreach (Sound s in sounds){
-            s.mute = !s.mute;
-            s.source.mute = s.mute;
-        }
-        gameState.mute = !gameState.mute;
+        //foreach (Sound s in sounds){
+        //    s.mute = !s.mute;
+        //    s.source.mute = s.mute;
+        //}
+        //gameState.mute = !gameState.mute;
+        AudioListener.pause = !AudioListener.pause;
     }
 }

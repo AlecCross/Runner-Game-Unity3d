@@ -102,7 +102,6 @@ public class RoadGenerator : MonoBehaviour
             if (rand == 0)
             {
                 newRoadEn = Instantiate(RoadEnemyPrefab, position, Quaternion.identity);
-                //print("");
             }
             else if(rand > 0)
             {

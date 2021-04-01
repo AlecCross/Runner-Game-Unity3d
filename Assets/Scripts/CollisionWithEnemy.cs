@@ -63,7 +63,7 @@ public class CollisionWithEnemy : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Ch43_nonPBR" && health > 0)
+        if (collision.gameObject.name == "Ch43_nonPBR"|| collision.gameObject.name == "Cerca" && health > 0)
         {
             health--;
             playerAnimator.SetTrigger("HitOnLeftOfHead");

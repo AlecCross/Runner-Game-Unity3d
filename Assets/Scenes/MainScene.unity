@@ -2661,7 +2661,6 @@ MonoBehaviour:
   on: {fileID: 1375565457}
   oof: {fileID: 1375565457}
   muteText: {fileID: 973815183}
-  gameState: {fileID: 5270606772149429851}
 --- !u!1 &1400526878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,7 +4088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cb56a3add474e41a9af087a544c3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: {fileID: 5270606772149429851}
   sounds:
   - clip: {fileID: 8300000, guid: f4495f0079a1cd54f942107f00554a4d, type: 3}
     name: PlayerDeath

@@ -23,7 +23,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && targetPos.x > - laneOffset && !gameState.gameover)
+        if (Input.GetKeyDown(KeyCode.A) 
+            || Input.GetKeyDown(KeyCode.LeftArrow) 
+            && targetPos.x > - laneOffset 
+            && !gameState.gameover)
         {
             //StartCoroutine(LeftOffset());
             animator.SetTrigger("LeftOffset");
@@ -31,7 +34,10 @@ public class PlayerController : MonoBehaviour
                                         transform.position.y,
                                         transform.position.z);
         }
-        if (Input.GetKeyDown(KeyCode.D) && targetPos.x < laneOffset && !gameState.gameover)
+        if (Input.GetKeyDown(KeyCode.D) 
+            || Input.GetKeyDown(KeyCode.RightArrow) 
+            && targetPos.x < laneOffset 
+            && !gameState.gameover)
         {
             //StartCoroutine(RightOffset());
             animator.SetTrigger("RightOffset");

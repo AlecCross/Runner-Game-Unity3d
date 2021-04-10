@@ -71,6 +71,7 @@ public class CollisionWithEnemy : MonoBehaviour
             {
                 FindObjectOfType<AudioManger>().Play("Collision");
             }
+
             //print("Столкновение " + gameObject.name + "теряет жизни " + health);
         }
         //else if (collision.gameObject.name == "Ch43_nonPBR" && health > 0)

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +32,7 @@ public class EnemyAnimControl : MonoBehaviour
     IEnumerator GameOver()
     {
         animator.SetTrigger("LookingAround");
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(0.4f);
         animator.SetTrigger("Idle");
     }
 }

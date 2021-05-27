@@ -16,7 +16,7 @@ public class RoadGenerator : MonoBehaviour
     public int maxRoadCount = 5;
     bool isStoped;
     int cycleEnemySpawn = 0;
-    //System.Random rnd = new System.Random();
+    System.Random rnd = new System.Random();
     //float rand;
     void Start()
     {
@@ -64,7 +64,7 @@ public class RoadGenerator : MonoBehaviour
     {
         yield return new WaitForSeconds(2.4f);
         speed = maxSpeed;
-        SwipeManager.instance.enabled = true;
+        //SwipeManager.instance.enabled = true;
     }
 
     public void ResetLevel()
@@ -89,7 +89,7 @@ public class RoadGenerator : MonoBehaviour
     {
         Vector3 position = Vector3.zero;
         if (roads.Count > 0) 
-            position= roads[roads.Count-1].transform.position + new Vector3(0, 0, 15);
+            position = roads[roads.Count-1].transform.position + new Vector3(0, 0, 15);
         GameObject newRoadEn = null, newRoad;
         if (cycleEnemySpawn == 3)
         {
@@ -97,17 +97,18 @@ public class RoadGenerator : MonoBehaviour
             //newRoadEn = Instantiate(RoadEnemyPrefab,
             //                        posDiff + new Vector3(rnd.Next(0, 3), 0, 0),
             //                        Quaternion.identity);
-            float rand = UnityEngine.Random.Range(-1f, 1f);
+            float rand = rnd.Next(3);
+            //float rand = UnityEngine.Random.Range(-1f, 1f);
             //print("rnd.Next(-1, 1) ="+ rand);
             if (rand == 0)
             {
                 newRoadEn = Instantiate(RoadEnemyPrefab, position, Quaternion.identity);
             }
-            else if(rand > 0)
+            else if(rand == 1)
             {
                 newRoadEn = Instantiate(RoadEnemyRightPrefab, position, Quaternion.identity);
             }
-            else if(rand < 0)
+            else if(rand == 2)
             {
                 newRoadEn = Instantiate(RoadEnemyLeftPrefab, position, Quaternion.identity);
             }

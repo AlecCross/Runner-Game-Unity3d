@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject gameManager;
     GameState gameState;
     float laneOffset = 1f;
-    float laneChangeSpeed = 15; 
+    float laneChangeSpeed = 15;
     
     void Start()
     {
@@ -23,8 +23,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) 
-            || Input.GetKeyDown(KeyCode.LeftArrow) 
+       
+        if (Input.GetKeyDown(KeyCode.A)
+            ||Input.GetKeyDown(KeyCode.LeftArrow)
+            || SwipeManager.swipeLeft
             && targetPos.x > - laneOffset 
             && !gameState.gameover)
         {
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D) 
             || Input.GetKeyDown(KeyCode.RightArrow) 
+            || SwipeManager.swipeRight
             && targetPos.x < laneOffset 
             && !gameState.gameover)
         {
@@ -45,7 +48,9 @@ public class PlayerController : MonoBehaviour
                                         transform.position.y,
                                         transform.position.z);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && !gameState.gameover)
+        if (Input.GetKeyDown(KeyCode.Space)
+            || SwipeManager.swipeUp
+            && !gameState.gameover)
         {
             StartCoroutine(JumpSound());
         }

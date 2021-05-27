@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ch43_nonPBR
       objectReference: {fileID: 0}
+    - target: {fileID: 8802681126087969885, guid: 76d0e0ad46f71624a9792d89552ad955, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76d0e0ad46f71624a9792d89552ad955, type: 3}
 --- !u!1001 &1840266799227435467
